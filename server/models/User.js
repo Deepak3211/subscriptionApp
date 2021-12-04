@@ -24,6 +24,12 @@ const userSchema = new Schema({
     max: 64,
     select: false
   },
+  stripe_customer_id: {
+    type: String,
+
+  },
+  subscriptionPlan: [],
+
 }, { timestamps: true });
 
 export default mongoose.model('User', userSchema);

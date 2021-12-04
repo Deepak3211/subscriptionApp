@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 const UserAPI = (token) => {
   const [isLoggedIn,setIsLoggedIn] = useState(false);
   const [userInfo, setUserInfo] = useState([]);
-console.log(userInfo);
+// console.log(userInfo);
   useEffect(() => {
     if (token) {
       const getUser = async () => {
@@ -15,7 +15,7 @@ console.log(userInfo);
           })
          
           const { name, email } = data;
-          console.log(data);
+          // console.log(data);
           setUserInfo({email,name});
           setIsLoggedIn(true);
            

@@ -6,7 +6,7 @@ const SubcriptionAPI = () => {
 
   const getPrices = async () => {
     const { data } = await axios.get('/api/v1/getPrice');
-    console.log(data)
+    // console.log(data)
     setSubscriptionPlan(data)
   }
   useEffect(() => {
