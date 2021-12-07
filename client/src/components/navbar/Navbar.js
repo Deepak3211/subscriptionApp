@@ -6,7 +6,6 @@ import axios from 'axios'
 const Navbar = () => {
   const state = useContext(GlobalState);
   const [isLoggedIn] = state.UserAPI.isLoggedIn;
-
   const logoutUser = async () => {
     await axios.get('/api/v1/logout');
     localStorage.removeItem('firstLogin');

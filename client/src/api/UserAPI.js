@@ -30,7 +30,7 @@ const UserAPI = (token) => {
   
   return {
     isLoggedIn: [isLoggedIn, setIsLoggedIn],
-    userInfo:[userInfo, setUserInfo],
+    userInfo: [userInfo, setUserInfo],
   }
 }
 export default UserAPI;

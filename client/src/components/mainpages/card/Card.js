@@ -1,5 +1,4 @@
 import { useContext } from 'react'
-import {Link} from 'react-router-dom'
 import { GlobalState } from '../../../GlobalState'
 const Card = ({ price, handleSubscription }) => {
   const state = useContext(GlobalState);
@@ -41,9 +40,7 @@ const cardStyle = ()=>{
         <p> ✓ Access to private whatsapp group</p>
         <p> ✓ Email Support</p>
       </div>
-      <Link to = '/register' className={btnStyle()}>
-        <button >{ btnText() }</button>
-      </Link>
+        <button className={btnStyle() }onClick={(e) =>handleSubscription(e,price)}>{ btnText() }</button>
     </div>
   )
 }
