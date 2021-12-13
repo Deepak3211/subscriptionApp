@@ -25,17 +25,18 @@ app.use('/api/v1', subscriptionRouter);
 // Database Connection
 connectDB();
 
+if (process.env.NODE.ENV === 'production') {
+   app.use(express.static(path.join(__dirname, 'client', 'build')));
+
+   app.get('*', (req, res) => {
+      res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
+   });
+
+}
 
 // PORT
 const PORT = process.env.PORT || 5000;
 
-if (process.env.NODE_ENV === 'PRODUCTION') {
-    app.use(express.static('client/build'))
-
-    app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
-    })
-}
 
 // Listen
 
