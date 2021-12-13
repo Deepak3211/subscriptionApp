@@ -25,7 +25,7 @@ app.use('/api/v1', subscriptionRouter);
 // Database Connection
 connectDB();
 
-if (process.env.NODE.ENV === 'production') {
+if (process.env.NODE.ENV === 'PRODUCTION') {
    app.use(express.static(path.join(__dirname, 'client', 'build')));
 
    app.get('*', (req, res) => {
