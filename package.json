@@ -5,8 +5,8 @@
 "license": "MIT",
 "scripts": {
 "start": "nodemon -r esm index.js",
-"server": "node -r esm server/index.js",
-"production": "  node -r esm server/index.js",
+"server": "node -r esm index.js",
+"production": "  node -r esm index.js",
 "server-install":"yarn ",
 "client-install": "cd client && yarn ",
 "heroku-postbuild" : "cd client && yarn  && yarn run build"
