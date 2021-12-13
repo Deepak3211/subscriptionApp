@@ -25,7 +25,7 @@ export const DataProvider = ({ children }) => {
   const state = {
     token: [token, setToken],
     UserAPI: UserAPI(token),
-    SubcriptionAPI: SubcriptionAPI()
+    SubcriptionAPI: SubcriptionAPI(token)
   }
   return (
     <GlobalState.Provider value={state}>

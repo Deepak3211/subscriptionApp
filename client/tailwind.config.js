@@ -6,7 +6,8 @@ module.exports = {
   },
   variants: {
     extend: {
-      animation: ['responsive', 'motion-safe', 'motion-reduce']
+      animation: ['responsive', 'motion-safe', 'motion-reduce'],
+      visibility: ["group-hover"],
     },
   },
   plugins: [],

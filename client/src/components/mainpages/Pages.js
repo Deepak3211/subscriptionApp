@@ -3,11 +3,15 @@ import Home from '../mainpages/home/Home'
 import Login from './auth/Login'
 import Register from './auth/Register'
 import { ToastContainer } from 'react-toastify';
-import StripeSuccess from '../../utils/loading/StripeSuccess';
-import StripeCancel from '../../utils/loading/StripeCancel';
 import ProtectedRoute from '../routes/ProtectedRoute';
 import { useContext } from 'react';
 import { GlobalState } from '../../GlobalState';
+import StripeSuccess from './stripe/StripeSuccess';
+import StripeCancel from './stripe/StripeCancel';
+import Account from './user/Account';
+import Basic from './plans/Basic';
+import Standard from './plans/Standard';
+import Premium from './plans/Premium';
 
 const Pages = () => {
   
@@ -26,8 +30,21 @@ const Pages = () => {
        </Route>
         <Route element = {<ProtectedRoute />} >
           <Route path='/stripe/cancel' element={<StripeCancel />} />
-       </Route>
-        <Route path = '*' element = { <h3>Not Found </h3>}/>
+        </Route>
+        <Route path='/account' element={isLoggedIn ? <Account />: 'Not Found'} />
+        
+        <Route element = {<ProtectedRoute />} >
+          <Route path='/basic' element={<Basic />} />
+        </Route>
+        <Route element = {<ProtectedRoute />} >
+          <Route path='/standard' element={<Standard />} />
+        </Route>
+        <Route element = {<ProtectedRoute />} >
+          <Route path='/premium' element={<Premium />} />
+        </Route>
+        
+        <Route path='*' element={<h3>Not Found </h3>} />
+        
       </Routes>
       
     </div>

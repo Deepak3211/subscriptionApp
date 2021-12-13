@@ -2,7 +2,9 @@ import { useState } from "react"
 import { Link } from "react-router-dom"
 import { toast } from "react-toastify";
 import axios from 'axios';
+import Loader from "../utils/loading/Loader";
 const Register = () => {
+  const [loading, setLoading] = useState(false);
   const [user, setUser] = useState({
     name: '',
     email: '',
@@ -21,6 +23,7 @@ const Register = () => {
     try {
       e.preventDefault();
 
+      setLoading(true);
       await axios.post('/api/v1/register',{...user})
 
       localStorage.setItem('firstLogin',true)
@@ -29,9 +32,10 @@ const Register = () => {
       toast.success('Registeration Successful', {
         position: "top-center",
       })
-      
+      setLoading(false)
     } catch (err) {
 
+      setLoading(false)
       toast.error(err.response.data.message, {
       position: "bottom-right",
       autoClose: 2000,
@@ -79,7 +83,7 @@ const Register = () => {
             onChange={handleChange}
           
           />
-          <button type="submit" className="w-full text-center py-3 rounded bg-blue-400 text-white mb-4 hover:bg-blue-300 hover:shadow-lg hover:border-transparent" >Register</button>
+          <button type="submit" className="w-full text-center py-3 rounded bg-blue-400 text-white mb-4 hover:bg-blue-300 hover:shadow-lg hover:border-transparent" >{loading ? <Loader />: 'Register' }</button>
         </form>
 
         <div className="text-gray-500 mb-4 flex justify-center items-center">

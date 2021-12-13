@@ -1,9 +1,10 @@
 import { useContext } from 'react'
 import { GlobalState } from '../../../GlobalState'
-const Card = ({ price, handleSubscription }) => {
+const Card = ({ price, handleSubscription,userPlan }) => {
   const state = useContext(GlobalState);
   const [isLoggedIn] = state.UserAPI.isLoggedIn;
-  // console.log(isLoggedIn);
+  // console.log(userPlan,'hdidihd');
+  // console.log(price.id,'😆');
   const handleDynamicData = ()=>{
 // console.log(price.nickname)
     if(price.nickname === 'BASIC'){
@@ -21,7 +22,7 @@ const Card = ({ price, handleSubscription }) => {
     return price.nickname === 'STANDARD'? 'bg-red-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-yello-700 hover:border-blue-500 rounded w-full mt-8 text-2xl text-center' : 'bg-yellow-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-yello-700 hover:border-blue-500 rounded w-full mt-8 text-2xl text-center'
   }
   const btnText = () => {
-    return isLoggedIn ? 'Buy Now': 'Sign Up'
+    return state.token && isLoggedIn ? 'Buy Now': 'Sign Up'
   }
 const cardStyle = ()=>{
 
@@ -40,7 +41,11 @@ const cardStyle = ()=>{
         <p> ✓ Access to private whatsapp group</p>
         <p> ✓ Email Support</p>
       </div>
-        <button className={btnStyle() }onClick={(e) =>handleSubscription(e,price)}>{ btnText() }</button>
+      <button
+        className={btnStyle()}
+        onClick={(e) => handleSubscription(e, price)}>
+        {userPlan && userPlan.includes(price.id) ? 'Access Now ' : btnText()}
+        </button>
     </div>
   )
 }

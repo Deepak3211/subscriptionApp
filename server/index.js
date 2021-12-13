@@ -4,6 +4,11 @@ import cookieParser from 'cookie-parser';
 import { connectDB } from './config/db';
 import userRouter from './routes/authRoutes';
 import subscriptionRouter from './routes/subsRoutes';
+import path from 'path';
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 // Initializing the server
 const app = express();
 
@@ -29,6 +34,13 @@ connectDB();
 // PORT
 const PORT = process.env.PORT || 5000;
 
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../client/build')));
+  
+  app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname,'../client/build','index.html'));
+  })
+}
 
 // Listen
 
