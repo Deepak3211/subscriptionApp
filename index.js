@@ -4,10 +4,7 @@ import cookieParser from 'cookie-parser';
 import { connectDB } from './server/config/db';
 import userRouter from './server/routes/authRoutes';
 import subscriptionRouter from './server/routes/subsRoutes';
-import path from 'path';
-import { fileURLToPath } from 'url';
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const path = require('path')
 
 // Initializing the server
 const app = express();
