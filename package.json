@@ -4,12 +4,13 @@
 "main": "index.js",
 "license": "MIT",
 "scripts": {
- "start": "node  -r esm index.js",
-    "server": "nodemon index.js",
-    "client": "cd client && yarn start",
-    "server-install": "yarn add",
-    "client-install": "cd client && yarn install ",
-    "heroku-postbuild": "cd client && yarn install && yarn run build"
+"start": "nodemon  -r esm index.js",
+"server": "nodemon -r esm index.js",
+"client": "cd client && yarn start",
+"production": "  nodemon -r esm index.js",
+"server-install":"yarn install",
+"client-install": "cd client && yarn install",
+"heroku-postbuild" : "cd client && yarn install && yarn run build"
 
 },
 "dependencies": {
