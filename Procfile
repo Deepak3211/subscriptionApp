@@ -1,0 +1,1 @@
+web: noden -r esm index.js
