@@ -13,31 +13,31 @@ import Standard from './plans/Standard';
 import Premium from './plans/Premium';
 
 const Pages = () => {
-  
-  const state = useContext(GlobalState);
-  const [isLoggedIn] = state.UserAPI.isLoggedIn;
+
+const state = useContext(GlobalState);
+const [isLoggedIn] = state.UserAPI.isLoggedIn;
 // console.log(isLoggedIn)
-  return (
-    <div>
-      <ToastContainer />
-      <Routes>
-        <Route path='/' element = { <Home />}/>
-        <Route path='/register' element = { isLoggedIn ? 'Not Found':<Register />}/>
-        <Route path='/Login' element={isLoggedIn ?'Not Found': <Login />} />
-          <Route path='/stripe/success' element={isLoggedIn ? <StripeSuccess />: ''} />
-          <Route path='/stripe/cancel' element={isLoggedIn ? <StripeCancel />: ''} />
-        <Route path='/account' element={isLoggedIn ? <Account />: 'Not Found'} />
-        
-          <Route path='/basic' element={isLoggedIn ? <Basic />: ''} />
-          <Route path='/standard' element={isLoggedIn ? <Standard /> : ''} />
-          <Route path='/premium' element={isLoggedIn ? <Premium /> : ''} />
-        
-        <Route path='*' element={<h3>Not Found </h3>} />
-        
-      </Routes>
-      
-    </div>
-  )
+return (
+<div>
+<ToastContainer />
+<Routes>
+<Route path='/' element = { <Home />}/>
+<Route path='/register' element = { isLoggedIn ? 'Not Found':<Register />}/>
+<Route path='/Login' element={isLoggedIn ?'Not Found': <Login />} />
+<Route path='/stripe/success' element={isLoggedIn ? <StripeSuccess />: ''} />
+<Route path='/stripe/cancel' element={isLoggedIn ? <StripeCancel />: ''} />
+<Route path='/account' element={isLoggedIn ? <Account />: 'Not Found'} />
+
+<Route path='/basic' element={isLoggedIn ? <Basic />: ''} />
+<Route path='/standard' element={isLoggedIn ? <Standard /> : ''} />
+<Route path='/premium' element={isLoggedIn ? <Premium /> : ''} />
+
+<Route path='*' element={<h3>Not Found </h3>} />
+
+</Routes>
+
+</div>
+)
 }
 
 export default Pages
