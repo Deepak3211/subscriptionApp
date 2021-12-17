@@ -1,4 +1,4 @@
-import { useContext ,useCallback} from "react";
+import { useContext ,useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import { GlobalState } from "../../../GlobalState";
 import Card from "./Card"
@@ -11,7 +11,7 @@ const Basic = () => {
   // console.log(state)
   const navigate = useNavigate();
 
-  useCallback(() => {
+  useEffect(() => {
 
     const getPlan = () => {
       if (!userInfo.subscriptionPlan) {

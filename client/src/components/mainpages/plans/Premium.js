@@ -4,7 +4,7 @@ import Linkedin from './images/linkedin1.png'
 import Payment from './images/payment.png'
 import ChatRoom from './images/chat.png'
 import Eshop from './images/eShop.png'
-import { useCallback, useContext,  } from "react"
+import { useEffect, useContext,  } from "react"
 import { GlobalState } from "../../../GlobalState"
 import { useNavigate } from "react-router-dom"
 const Premium = () => {
@@ -12,7 +12,7 @@ const Premium = () => {
   const [userInfo] = state.UserAPI.userInfo;
   const navigate = useNavigate();
 
-useCallback(() => {
+useEffect(() => {
 
     const getPlan = () => {
       if (!userInfo.subscriptionPlan) {

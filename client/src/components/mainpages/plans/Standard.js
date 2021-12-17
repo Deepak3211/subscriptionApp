@@ -3,7 +3,7 @@ import Moderator from './images/nd_logo.png'
 import Linkedin from './images/linkedin1.png'
 import Payment from './images/payment.png'
 import ChatRoom from './images/chat.png'
-import { useCallback, useContext,  } from "react"
+import { useContext,useEffect  } from "react"
 import { GlobalState } from "../../../GlobalState"
 import { useNavigate } from "react-router-dom"
 const Standard = () => {
@@ -11,7 +11,7 @@ const Standard = () => {
   const [userInfo] = state.UserAPI.userInfo;
   const navigate = useNavigate();
 
-useCallback(() => {
+useEffect(() => {
 
     const getPlan = () => {
       if (!userInfo.subscriptionPlan) {
