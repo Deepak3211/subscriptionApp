@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { toast } from 'react-toastify';
 
 const UserAPI = (token) => {
   const [isLoggedIn,setIsLoggedIn] = useState(false);
@@ -21,7 +20,7 @@ const UserAPI = (token) => {
           setUserInfo({email,name, subscriptionPlan});
            
         } catch (err) {
-          toast.error(err.response.data.message);
+          console.log(err.response.data.message);
         }
       }
       getUser();
