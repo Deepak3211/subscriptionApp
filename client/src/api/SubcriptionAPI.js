@@ -25,8 +25,8 @@ const SubcriptionAPI = (token) => {
     setSubscriptions(data.data);
     // console.log('subscriptions',data);
     
-  } catch (error) {
-    console.log(error.response.data.message)
+  } catch (err) {
+    console.error(err.response.data.message)
   }
 }
    

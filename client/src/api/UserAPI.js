@@ -20,7 +20,7 @@ const UserAPI = (token) => {
           setUserInfo({email,name, subscriptionPlan});
            
         } catch (err) {
-          console.log(err.response.data.message);
+          console.error(err.response.data.message);
         }
       }
       getUser();

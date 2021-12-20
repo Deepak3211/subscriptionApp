@@ -3,7 +3,6 @@ import {useContext, useEffect} from "react"
 import { GlobalState } from "../../../GlobalState";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 const Home = () => {
   let navigate = useNavigate();
 
@@ -33,7 +32,7 @@ const [userPlan,setUserPlan] = state.UserAPI.userPlan;
           })
           //  console.log(result)
         } catch (err) {
-          toast.error(err.response.data.message);
+        console.error(err.response.data.message);
         }
       }
       getUserPlans();
