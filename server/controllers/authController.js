@@ -4,6 +4,7 @@ import sendToken from "../utils/jwtToken"
 import jwt from 'jsonwebtoken'
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
+
 // Register User => /api/v1/register
 export const registerUser = async (req, res) => {
   try {
@@ -58,7 +59,7 @@ export const loginUser = async (req, res) => {
     const user = await User.findOne({ email: email.toLowerCase() }).select('+password')
     
 
-    if (!user) res.status(400).json({
+    if (!user) return res.status(400).json({
       success: false,
       message: 'User not found'
     })

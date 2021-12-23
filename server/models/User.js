@@ -31,5 +31,4 @@ const userSchema = new Schema({
   subscriptionPlan: [],
 
 }, { timestamps: true });
-
 export default mongoose.model('User', userSchema);

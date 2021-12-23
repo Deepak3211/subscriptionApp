@@ -1,6 +1,4 @@
 import { createAccessToken, createRefreshToken } from './auth';
-import dotenv from 'dotenv';
-dotenv.config()
 const sendToken = (user, statusCode, res) => {
   
   // JsonwWebToken for authentication
