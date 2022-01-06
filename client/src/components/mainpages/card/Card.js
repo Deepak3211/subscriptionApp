@@ -22,7 +22,7 @@ const Card = ({ price, handleSubscription,userPlan }) => {
     return price.nickname === 'STANDARD'? 'bg-red-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-yello-700 hover:border-blue-500 rounded w-full mt-8 text-2xl text-center' : 'bg-yellow-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-yello-700 hover:border-blue-500 rounded w-full mt-8 text-2xl text-center'
   }
   const btnText = () => {
-    return state.token && isLoggedIn ? 'Buy Now': 'Sign Up'
+    return state.token && isLoggedIn ? 'Buy Now': 'START LEARNING NOW'
   }
 const cardStyle = ()=>{
 

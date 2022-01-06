@@ -38,7 +38,7 @@ const [userPlan,setUserPlan] = state.UserAPI.userPlan;
       getUserPlans();
     }
     
-  }, [token,navigate]);
+  }, [token,navigate,setUserPlan]);
 
   // HandleSubscription
   const handleSubscription = async (e,price) => {
@@ -64,8 +64,15 @@ const [userPlan,setUserPlan] = state.UserAPI.userPlan;
     
   }
   return (<>
-  
-    <h1 className='font-mono text-5xl font-semibold text-yellow-600 text-center mt-16'>Become a Pro Member</h1>
+    <div className="flex justify-end  ">
+
+    <div className="flex justify-center   flex-col max-w-md py-4 px-8 bg-gray-500 shadow-lg rounded-lg m-4 text-white ">
+      <span>Testing Card : 4242424242424242 </span>
+      <p>CVC: Any 3 digits</p>
+      <p>Expiration : Any future date </p>
+  </div>
+    </div>
+    <h1 className='font-mono text-5xl font-semibold text-yellow-600 text-center mt-12'>Become a Pro Member</h1>
     <div className = 'flex justify-center items-center gap-8 mt-10 flex-wrap'>
       {subscriptionPlan && subscriptionPlan.map((plan) => <Card key={plan.id} price={plan} handleSubscription={handleSubscription} userPlan={userPlan} />)}
     </div>
