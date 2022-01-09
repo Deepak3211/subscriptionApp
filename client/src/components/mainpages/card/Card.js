@@ -26,7 +26,7 @@ const Card = ({ price, handleSubscription,userPlan }) => {
   }
 const cardStyle = ()=>{
 
-  return price.nickname === 'STANDARD' ? 'flex justify-center items-center max-w-sm rounded overflow-hidden shadow-lg flex-col border-solid border-t border-l border-r border-red-600 ':'flex justify-center items-center max-w-sm rounded overflow-hidden shadow-lg flex-col'
+  return price.nickname === 'STANDARD' ? 'flex justify-center items-center max-w-sm rounded overflow-hidden shadow-2xl  flex-col border-solid border-t border-l border-r border-red-600 rounded-2xl ':'flex justify-center items-center max-w-sm rounded overflow-hidden shadow-lg flex-col border-solid border-t border-red-500 rounded-2xl'
 }
   
   return (
