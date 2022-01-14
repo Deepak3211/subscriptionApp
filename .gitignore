@@ -3,7 +3,7 @@
 /node_modules
 
 #production
-# /client/build
+/client/build
 
 # misc
 .DS_Store
