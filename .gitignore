@@ -6,6 +6,7 @@
 /client/build
 
 # misc
+.yarn
 .DS_Store
 .env
 /client/.env
